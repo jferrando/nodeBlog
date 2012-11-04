@@ -1,7 +1,0 @@
-var assert = require('assert')
-,blog = require('blog');
-suite('blog',function() {
-  test('all method should return all posts', function() {
-    assert.equal(blog.all().length,2);
-  });
-});
