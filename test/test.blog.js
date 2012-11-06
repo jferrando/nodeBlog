@@ -6,7 +6,16 @@ var request = require('supertest')
 describe('Blog API', function() {
   
   it('GET /posts should return 200',function(callback){
-    request(app).get('/posts').expect(200,callback);
-  })
+    request(app)
+    .get('/posts')
+    .expect(200,callback);
+  });
+  
+  it('GET /posts should return JSON',function(callback){
+    request(app)
+    .get('/posts')
+    .expect(200,callback)
+    .expect('Content-Type', /json/);
+  });
   
 });
